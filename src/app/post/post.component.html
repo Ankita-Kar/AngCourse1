@@ -1,0 +1,12 @@
+
+<!-- basically this creates a typescript scope inside the html file
+just like how cs scope can be made using <style></style> and js scope using <script></script> just like that -->
+
+<!-- data binding - string interpolation -->
+<h1>{{title}}</h1>
+
+<!-- now string interpolation can be used as we used the @Input inside the child  -->
+<!-- i.e. we sent the varaiable from the parent to the child as an input -->
+<h3>{{fromParent}}</h3>
+
+<app-post-list [fromParentPost] = "parentPostMessage"></app-post-list>
