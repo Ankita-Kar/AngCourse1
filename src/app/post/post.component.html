@@ -10,3 +10,6 @@ just like how cs scope can be made using <style></style> and js scope using <scr
 <h3>{{fromParent}}</h3>
 
 <app-post-list [fromParentPost] = "parentPostMessage"></app-post-list>
+
+<!-- in angular (--event--) this is how you register an event-->
+<button (click) = "sendMessage()">click</button>

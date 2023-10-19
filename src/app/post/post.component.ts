@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post',
@@ -18,9 +19,6 @@ export class PostComponent implements OnInit{
   //lets say we want to have this variable inside the app component
   //how will we do that?
   //we can;t use string interpolationin that case
-
-  @Input()
-  fromParent!: string;
   //it is marked with the ! (exclamation mark), indicating that it is guaranteed to be initialized. 
   //This is typically used when you know the property will always have a value and want to prevent TypeScript from complaining about possible null or undefined values.
   
@@ -31,10 +29,29 @@ export class PostComponent implements OnInit{
   
   childMessage:string = "from child post component"
   
+  outputChildMessage:string = "message from child part 2"
+  
+  @Input()
+  fromParent!: string;
+
+  @Output()
+  messageEvent = new EventEmitter<string>()
+  //now what we want is to emit the message stored in outputChildMessage via this eventemmiter on a click
+
+
   constructor(){}
 
   ngOnInit(): void {
       
+  }
+
+  sendMessage(){
+    // console.log('click');
+
+    // we need to emit the message stored in outputChildMessage and emit it when messageEvent occurs.
+    this.messageEvent.emit(this.outputChildMessage);
+    //we then need to capture this event in parent component.
+    
   }
 
 }

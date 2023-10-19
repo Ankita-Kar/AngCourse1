@@ -6,4 +6,9 @@
 
 <!-- let's mention the navbar component right here -->
 <app-navbar></app-navbar>
-<app-post [fromParent] = "parentMessage"></app-post>
+<app-post [fromParent] = "parentMessage" (messageEvent)="recieveMessage($event)"></app-post>
+<!-- (messageEvent)="recieveMessage($event)"
+here we catch the messageEvent as $event as a parameter in the recieveMessage function and now this function in the parent.ts will execute the action -->
+
+<p>{{fromChildOutput}}</p>
+<!-- here we access this value as in what we need -->
