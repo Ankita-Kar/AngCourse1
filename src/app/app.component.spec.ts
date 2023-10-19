@@ -16,7 +16,8 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+    const app = fixture.    //here the new component is registered
+    componentInstance;
     expect(app).toBeTruthy();
   });
 
