@@ -9,6 +9,8 @@ import { PostComponent } from './post/post.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit{
+  
+
   title = 'AngCourse';
 
   //we want to access/send this variable from/to the post component which is the child of the app component

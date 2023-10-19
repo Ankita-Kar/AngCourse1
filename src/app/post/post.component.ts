@@ -38,6 +38,8 @@ export class PostComponent implements OnInit{
   messageEvent = new EventEmitter<string>()
   //now what we want is to emit the message stored in outputChildMessage via this eventemmiter on a click
 
+  //class and style binding example
+  bool : boolean = true;
 
   constructor(){}
 

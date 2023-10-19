@@ -9,6 +9,9 @@ just like how cs scope can be made using <style></style> and js scope using <scr
 <!-- i.e. we sent the varaiable from the parent to the child as an input -->
 <h3>{{fromParent}}</h3>
 
+<h1 [class.text-red] = "bool">class binding</h1>
+<h1 [style.color] = "bool? 'blue':''">style binding</h1>
+
 <app-post-list [fromParentPost] = "parentPostMessage"></app-post-list>
 
 <!-- in angular (--event--) this is how you register an event-->
